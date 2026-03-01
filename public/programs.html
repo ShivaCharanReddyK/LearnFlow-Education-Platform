@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Browse and filter online education programs by category, duration, and start date. Find your perfect program at LearnFlow.">
+    <title>Programs - LearnFlow</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <div class="logo-icon">🎓</div>LearnFlow
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/programs" class="active">Programs</a></li>
+                <li><a href="/recommendations">AI Recommendations</a></li>
+            </ul>
+            <div class="nav-auth" id="nav-auth"></div>
+            <div class="nav-toggle" onclick="document.getElementById('nav-links').classList.toggle('mobile-open')">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Explore Our <span class="gradient-text">Programs</span></h1>
+                <p>Find the perfect program to advance your career</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters-bar">
+                <div class="form-group">
+                    <input type="text" class="form-input" id="search-input" placeholder="🔍 Search programs...">
+                </div>
+                <div class="form-group">
+                    <select class="form-select" id="filter-category">
+                        <option value="all">All Categories</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Data Science">Data Science</option>
+                        <option value="Business">Business</option>
+                        <option value="Design">Design</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="Health Sciences">Health Sciences</option>
+                        <option value="Arts & Humanities">Arts & Humanities</option>
+                        <option value="Education">Education</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select class="form-select" id="filter-duration">
+                        <option value="all">All Durations</option>
+                        <option value="4 weeks">4 weeks</option>
+                        <option value="8 weeks">8 weeks</option>
+                        <option value="12 weeks">12 weeks</option>
+                        <option value="16 weeks">16 weeks</option>
+                        <option value="24 weeks">24 weeks</option>
+                        <option value="6 months">6 months</option>
+                        <option value="1 year">1 year</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="date" class="form-input" id="filter-date" title="Filter by start date">
+                </div>
+            </div>
+
+            <p id="results-count" style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1rem;"></p>
+
+            <div class="grid grid-3" id="programs-grid">
+                <div class="loader" style="grid-column:1/-1;">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2026 LearnFlow. All rights reserved.</p>
+                <p>Built with ❤️ for learners</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/app.js"></script>
+    <script src="/js/programs.js"></script>
+</body>
+
+</html>

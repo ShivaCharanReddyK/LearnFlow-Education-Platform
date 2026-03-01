@@ -1,0 +1,66 @@
+version: "3.9"
+
+services:
+  # ── MongoDB ──────────────────────────────────────────────────────────────────
+  mongo:
+    image: mongo:7
+    container_name: learnflow-mongo
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: learnflow
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - "27017:27017"
+    healthcheck:
+      test: [ "CMD", "mongosh", "--eval", "db.adminCommand('ping')" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Node.js Backend + Frontend ────────────────────────────────────────────────
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: learnflow-backend
+    restart: unless-stopped
+    depends_on:
+      mongo:
+        condition: service_healthy
+    environment:
+      MONGODB_URI: mongodb://mongo:27017/learnflow
+      JWT_SECRET: ${JWT_SECRET:-learnflow-docker-secret-change-in-prod}
+      GMAIL_USER: ${GMAIL_USER:-}
+      GMAIL_APP_PASSWORD: ${GMAIL_APP_PASSWORD:-}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY:-}
+      PORT: 5000
+      AI_SERVICE_URL: http://ai-service:5001
+      NODE_ENV: production
+    ports:
+      - "5000:5000"
+    healthcheck:
+      test: [ "CMD", "wget", "-qO-", "http://localhost:5000/api/health" ]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+
+  # ── Python AI Microservice ────────────────────────────────────────────────────
+  ai-service:
+    build:
+      context: .
+      dockerfile: Dockerfile.ai
+    container_name: learnflow-ai
+    restart: unless-stopped
+    depends_on:
+      - mongo
+    environment:
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY:-}
+      MONGODB_URI: mongodb://mongo:27017/learnflow
+      AI_SERVICE_PORT: 5001
+    ports:
+      - "5001:5001"
+
+volumes:
+  mongo_data:
+    name: learnflow_mongo_data

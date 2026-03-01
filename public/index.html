@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="LearnFlow - Discover and enroll in world-class online education programs. From Data Science to Design, find your path to success.">
+  <title>LearnFlow - Transform Your Future with Online Education</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar" id="main-nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">
+        <div class="logo-icon">🎓</div>
+        LearnFlow
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/programs">Programs</a></li>
+        <li><a href="/recommendations">AI Recommendations</a></li>
+      </ul>
+      <div class="nav-auth" id="nav-auth"></div>
+      <div class="nav-toggle" onclick="document.getElementById('nav-links').classList.toggle('mobile-open')">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>
+          Unlock Your Potential with
+          <span class="gradient-text">World-Class Online Education</span>
+        </h1>
+        <p>Discover cutting-edge programs in technology, business, design, and more. Learn from industry experts and
+          transform your career — all from the comfort of your home.</p>
+        <div class="hero-actions">
+          <a href="/programs" class="btn btn-primary btn-lg" id="hero-explore-btn">Explore Programs →</a>
+          <a href="/register" class="btn btn-outline btn-lg" id="hero-register-btn">Get Started Free</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="stat-number">12+</div>
+            <div class="stat-label">Programs</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Students</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-number">95%</div>
+            <div class="stat-label">Success Rate</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Expert Instructors</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="floating-card" style="width: 220px;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">🚀</div>
+          <div style="font-weight:600; margin-bottom:0.25rem;">AI & Machine Learning</div>
+          <div style="font-size:0.8rem; color:var(--text-muted);">12 weeks • Starting Soon</div>
+        </div>
+        <div class="floating-card" style="width: 200px;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">💻</div>
+          <div style="font-weight:600; margin-bottom:0.25rem;">Full-Stack Development</div>
+          <div style="font-size:0.8rem; color:var(--text-muted);">16 weeks • Enrolling</div>
+        </div>
+        <div class="floating-card" style="width: 190px;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">📊</div>
+          <div style="font-weight:600; margin-bottom:0.25rem;">Data Science</div>
+          <div style="font-size:0.8rem; color:var(--text-muted);">24 weeks • Popular</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Choose LearnFlow?</h2>
+        <p>Everything you need to accelerate your career in one platform</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Industry-Aligned Curriculum</h3>
+          <p>Programs designed with industry partners to ensure you learn the most in-demand skills.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h3>AI-Powered Recommendations</h3>
+          <p>Our Gemini AI helps you find the perfect program based on your background and goals.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">👨‍🏫</div>
+          <h3>Expert Instructors</h3>
+          <p>Learn from professionals with real-world experience in leading tech companies.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Flexible Learning</h3>
+          <p>Study at your own pace with on-demand content accessible from any device.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎓</div>
+          <h3>Recognized Certificates</h3>
+          <p>Earn certificates that are recognized by top employers worldwide.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💰</div>
+          <h3>Flexible Payments</h3>
+          <p>Choose full payment or split into convenient monthly installments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="section" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Explore Categories</h2>
+        <p>Find your passion across diverse subject areas</p>
+      </div>
+      <div class="grid grid-4">
+        <a href="/programs?category=Computer+Science" class="feature-card"
+          style="text-decoration:none; text-align:center;">
+          <div style="font-size:2.5rem; margin-bottom:0.75rem;">💻</div>
+          <h3>Computer Science</h3>
+          <p>Web Dev, Mobile, AI, Cybersecurity</p>
+        </a>
+        <a href="/programs?category=Data+Science" class="feature-card" style="text-decoration:none; text-align:center;">
+          <div style="font-size:2.5rem; margin-bottom:0.75rem;">📊</div>
+          <h3>Data Science</h3>
+          <p>ML, Analytics, Statistics</p>
+        </a>
+        <a href="/programs?category=Business" class="feature-card" style="text-decoration:none; text-align:center;">
+          <div style="font-size:2.5rem; margin-bottom:0.75rem;">📈</div>
+          <h3>Business</h3>
+          <p>Marketing, Analytics, Strategy</p>
+        </a>
+        <a href="/programs?category=Design" class="feature-card" style="text-decoration:none; text-align:center;">
+          <div style="font-size:2.5rem; margin-bottom:0.75rem;">🎨</div>
+          <h3>Design</h3>
+          <p>UI/UX, Visual Design, Prototyping</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center; max-width:700px; margin:0 auto;">
+        <h2 style="font-size:2.5rem; font-weight:800; margin-bottom:1rem;">Ready to Start Your Journey?</h2>
+        <p style="color:var(--text-secondary); font-size:1.1rem; margin-bottom:2rem;">Join thousands of students who
+          have transformed their careers through LearnFlow. Your next chapter begins here.</p>
+        <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+          <a href="/programs" class="btn btn-primary btn-lg">Browse All Programs</a>
+          <a href="/register" class="btn btn-outline btn-lg">Create Free Account</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>🎓 LearnFlow</h3>
+          <p>Empowering learners worldwide with accessible, high-quality online education programs.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="/programs">All Programs</a></li>
+            <li><a href="/register">Get Started</a></li>
+            <li><a href="/login">Sign In</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="/programs">Computer Science</a></li>
+            <li><a href="/programs">Data Science</a></li>
+            <li><a href="/programs">Business</a></li>
+            <li><a href="/programs">Design</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 LearnFlow. All rights reserved.</p>
+        <p>Built with ❤️ for learners everywhere</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+</body>
+
+</html>

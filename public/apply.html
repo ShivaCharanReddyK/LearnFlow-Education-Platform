@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apply to a program on LearnFlow">
+    <title>Apply - LearnFlow</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <div class="logo-icon">🎓</div>LearnFlow
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/programs">Programs</a></li>
+                <li><a href="/recommendations">AI Recommendations</a></li>
+            </ul>
+            <div class="nav-auth" id="nav-auth"></div>
+            <div class="nav-toggle" onclick="document.getElementById('nav-links').classList.toggle('mobile-open')">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+    <div class="page-content">
+        <div class="container" id="application-container">
+            <div class="loader">
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2026 LearnFlow</p>
+            </div>
+        </div>
+    </footer>
+    <script src="/js/app.js"></script>
+    <script src="/js/application.js"></script>
+</body>
+
+</html>
